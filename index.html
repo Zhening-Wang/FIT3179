@@ -7,16 +7,32 @@
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
   <!-- Import vega-embed -->
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
 </head>
 <body>
 
-<div id="vis"></div>
+<h1>FIT3179 Week 10 Homework - Multiple Visualisations</h1>
+
+<h2>US Police Shootings from 2015 to 2020 - Map Overview</h2>
+<div id="map"></div>
+
+<h2>US Police Shootings from 2015 to 2020 - Number of Shootings Categorised by Race</h2>
+<div id="stackedbar"></div>
 
 <script type="text/javascript">
-  var spec = "https://Zhening-Wang.github.io/FIT3179/js/hw9.map.json";
-  vegaEmbed('#vis', spec).then(function(result) {
+  var dotmap = "https://Zhening-Wang.github.io/FIT3179/js/hw9.map.json";
+  vegaEmbed('#map', dotmap).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  var stackbarchart = "https://Zhening-Wang.github.io/FIT3179/js/hw10.stacked.bar.json";
+  vegaEmbed('#stackedbar', stackbarchart).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
+
 </body>
 </html>
