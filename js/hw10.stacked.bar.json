@@ -57,6 +57,7 @@
         "align": "right",
         "baseline": "bottom",
         "dx": 290,
+        "dy": -16,
         "fontSize": 11.5,
         "fontStyle": "italic"
       },
