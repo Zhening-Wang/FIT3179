@@ -1,12 +1,11 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+	"$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "title": {
     "text": "Overview of US Police Shooting from 2015 to 2020",
     "font": "lato",
     "fontSize": 22
   },
-  "width": 800,
-  "height": 600,
+	"width": "container",
   "layer": [
     {
       "data": {
@@ -15,7 +14,7 @@
         "type": "topojson", 
         "feature": "ne_110m_admin_1_states_provinces"
         }
-      },
+	    },
       "projection": {
         "type": "albersUsa"
       },
@@ -74,7 +73,7 @@
           {"field": "armed", "type": "nominal", "title": "Armed"}
         ]
       }
-    } 
+    }	
   ]
     
 }
