@@ -1,0 +1,37 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "Unarmed Police Shooting in the US from 2015 to 2020",
+  "width":"container",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Zhening-Wang/FIT3179/main/data/Unarmed%20Shooting.csv"
+  },
+  "transform": [
+    {
+      "aggregate": [{
+       "op": "count",
+       "field": "id",
+       "as": "unarmed_race_count"
+      }],
+      "groupby": ["race"]
+    }
+  ],
+  "mark": {"type": "arc", "innerRadius": 50},
+  "encoding": {
+    "theta": {"field": "unarmed_race_count", "type": "quantitative"},
+    "color": {
+        "field": "race",
+        "type": "nominal",
+        "scale": {
+          "domain": ["Asian", "Black", "Hispanic", "Native American", "Other", "White"],
+          "range": ["#8da0cb", "#fc8d62", "#e78ac3", "#a6d854", "#ffd92f", "#66c2a5"]
+        },
+        "title": "Human Race"
+    },
+    "tooltip": [
+      {"field": "race", "type": "nominal", "title": "Race"},
+      {"field": "unarmed_race_count", "type": "nominal", "title": "Number of shooting"}
+      ]
+  },
+  
+  "view": {"stroke": null}
+}
