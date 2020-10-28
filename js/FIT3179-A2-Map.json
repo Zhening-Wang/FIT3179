@@ -5,8 +5,7 @@
     "font": "lato",
     "fontSize": 22
   },
-  "width": 800,
-  "height": 600,
+  "width": "container",
   "layer": [
     {
       "data": {
