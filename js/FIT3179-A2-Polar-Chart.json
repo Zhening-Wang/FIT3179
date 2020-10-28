@@ -1,0 +1,78 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": {
+    "text": "Unarmed Police Shooting in the US from 2015 to 2020",
+    "font": "lato",
+    "fontSize": 22
+  },
+  "width": "container",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Zhening-Wang/FIT3179/main/data/Unarmed%20Shooting.csv"
+  },
+  "transform": [
+    {
+      "aggregate": [{
+       "op": "count",
+       "field": "id",
+       "as": "unarmed_race_count"
+      }],
+      "groupby": ["race"]
+    }
+  ],
+  "layer": [{
+    "mark": {
+      "type": "arc", 
+      "innerRadius": 20, 
+      "stroke": "#fff"}
+  },{
+    "mark": {
+      "type": "text", 
+      "radiusOffset": 10,
+      "font": "lato",
+      "fontStyle": "bold",
+      "fontSize": 12
+    },
+    "encoding": {
+      "text": {
+        "field": "unarmed_race_count", 
+        "type": "quantitative"
+      }
+    }
+  }],
+  "encoding": {
+    "theta": {
+      "field": "unarmed_race_count", 
+      "type": "quantitative",
+      "stack": true
+    },
+    "radius": {
+      "field": "unarmed_race_count", 
+      "scale": {"type": "log", "rangeMin": 100}
+    },
+    "order": {
+      "aggregate": "sum", 
+      "field": "unarmed_race_count"
+    },
+    "color": {
+        "field": "race",
+        "type": "nominal",
+        "legend": {
+          "labelFont": "lato",
+          "labelFontSize": 12,
+          "titleFont": "lato",
+          "titleFontSize": 14,
+          "orient": "right"
+        },
+        "scale": {
+          "domain": ["Asian", "Black", "Hispanic", "Native American", "Other", "White"],
+            "range": ["#8da0cb", "#fc8d62", "#e78ac3", "#a6d854", "#ffd92f", "#66c2a5"]
+        },
+        "title": "Human Race"
+    },
+    "tooltip": [
+      {"field": "race", "type": "nominal", "title": "Race"},
+      {"field": "unarmed_race_count", "type": "nominal", "title": "Number of shooting"}
+    ]
+  },
+  "view": {"stroke": null}
+}
