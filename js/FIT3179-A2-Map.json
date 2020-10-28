@@ -6,7 +6,7 @@
     "fontSize": 22
   },
   "width": "container",
-  "height": 600,
+  "height": "container",
   "layer": [
     {
       "data": {
