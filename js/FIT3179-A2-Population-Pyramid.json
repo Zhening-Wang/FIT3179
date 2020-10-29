@@ -13,10 +13,11 @@
       }
     }],
     "title": {
-      "text": "Unarmed Police",
+      "text": "Percentage of Unarmed Shooting",
       "font": "lato",
-      "fontSize": 22
+      "fontSize": 14
     },
+    "height": 150,
     "layer": [{
       "mark": "bar"
     }, {
@@ -50,7 +51,7 @@
           "labelFont": "lato",
           "labelFontSize": 12,
           "titleFont": "lato",
-          "titleFontSize": 14
+          "titleFontSize": 12
         },
         "sort": "descending",
         "scale": {"domain": [0,70]}
@@ -73,6 +74,7 @@
       "type": "text",
       "align": "center"
     },
+    "height": 150,
     "encoding": {
       "y": {"field": "Race", "type": "nominal", "axis": null},
       "text": {"field": "Race", "type": "nominal"}
@@ -82,9 +84,9 @@
       "filter": {"field": "type", "equal": "US Population"}
     }],
     "title": {
-      "text": "US Population",
+      "text": "Percentage of US Population",
       "font": "lato",
-      "fontSize": 22
+      "fontSize": 14
     },
     "layer": [{
       "mark": "bar"
@@ -95,12 +97,14 @@
         "baseline": "middle",
         "dx": 5,
         "font": "lato",
-        "fontSize": 12
+        "fontSize": 12,
+        "fontStyle": "bold"
       },
       "encoding": {
         "text": {"field": "Percentage", "type": "quantitative"}
       }
   }],
+    "height": 150,
     "encoding": {
       "y": {
         "field": "Race", "title": null,
@@ -115,7 +119,7 @@
           "labelFont": "lato",
           "labelFontSize": 12,
           "titleFont": "lato",
-          "titleFontSize": 14
+          "titleFontSize": 12
         },
         "scale": {"domain": [0,70]}
       },
