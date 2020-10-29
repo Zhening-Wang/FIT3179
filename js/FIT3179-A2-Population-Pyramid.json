@@ -130,7 +130,7 @@
       "tooltip": [
         {"field": "Race", "type": "nominal", "title": "Race"},
         {"field": "type", "type": "nominal", "title": "Type"},
-        {"field": "Percentage", "type": "quantitative"}
+        {"field": "Population", "type": "quantitative", "title": "Population in million"}
       ]
     }
   }],
