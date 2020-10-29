@@ -1,0 +1,138 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": { "url": "https://raw.githubusercontent.com/Zhening-Wang/FIT3179/main/data/Race%20Percentage.csv"},
+  "transform": [
+    {"calculate": "datum.Type == 'Unarmed Shooting' ? 'Unarmed Shooting' : 'US Population'", "as": "type"}
+  ],
+  "spacing": 0,
+  "hconcat": [{
+    "transform": [{
+      "filter": {
+        "field": "type", 
+        "equal": "Unarmed Shooting"
+      }
+    }],
+    "title": {
+      "text": "Unarmed Police",
+      "font": "lato",
+      "fontSize": 22
+    },
+    "layer": [{
+      "mark": "bar"
+    }, {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": -30,
+        "font": "lato",
+        "fontSize": 12
+      },
+      "encoding": {
+        "text": {
+          "field": "Percentage", 
+          "type": "quantitative"
+        }
+      }
+  }],
+    "encoding": {
+      "y": {
+        "field": "Race", 
+        "title": null,
+        "axis": null
+      },
+      "x": {
+        "aggregate": "max", 
+        "field": "Percentage",
+        "title": "Percentage",
+        "axis": {
+          "format": "s",
+          "labelFont": "lato",
+          "labelFontSize": 12,
+          "titleFont": "lato",
+          "titleFontSize": 14
+        },
+        "sort": "descending",
+        "scale": {"domain": [0,70]}
+      },
+      "color": {
+        "field": "Type",
+        "scale": {"range": ["#377eb8", "#4daf4a"]},
+        "legend": null
+      },
+      "tooltip": [
+        {"field": "Race", "type": "nominal", "title": "Race"},
+        {"field": "type", "type": "nominal", "title": "Type"},
+        {"field": "Percentage", "type": "quantitative"}
+      ]
+    }
+  }, {
+    "width": 20,
+    "view": {"stroke": null},
+    "mark": {
+      "type": "text",
+      "align": "center"
+    },
+    "encoding": {
+      "y": {"field": "Race", "type": "nominal", "axis": null},
+      "text": {"field": "Race", "type": "nominal"}
+    }
+  }, {
+    "transform": [{
+      "filter": {"field": "type", "equal": "US Population"}
+    }],
+    "title": {
+      "text": "US Population",
+      "font": "lato",
+      "fontSize": 22
+    },
+    "layer": [{
+      "mark": "bar"
+    }, {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 5,
+        "font": "lato",
+        "fontSize": 12
+      },
+      "encoding": {
+        "text": {"field": "Percentage", "type": "quantitative"}
+      }
+  }],
+    "encoding": {
+      "y": {
+        "field": "Race", "title": null,
+        "axis": null
+      },
+      "x": {
+        "aggregate": "max", 
+        "field": "Percentage",
+        "title": "Percentage",
+        "axis": {
+          "format": "s",
+          "labelFont": "lato",
+          "labelFontSize": 12,
+          "titleFont": "lato",
+          "titleFontSize": 14
+        },
+        "scale": {"domain": [0,70]}
+      },
+      "color": {
+        "field": "type",
+        "legend": null
+      },
+      "tooltip": [
+        {"field": "Race", "type": "nominal", "title": "Race"},
+        {"field": "type", "type": "nominal", "title": "Type"},
+        {"field": "Percentage", "type": "quantitative"}
+      ]
+    }
+  }],
+  "config": {
+    "view": {"stroke": null},
+    "axis": {"grid": false},
+    "font": "lato"
+  }
+}
