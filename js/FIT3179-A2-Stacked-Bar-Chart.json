@@ -74,9 +74,9 @@
         "type": "text",
         "align": "right",
         "baseline": "bottom",
-        "dx": 200,
+        "dx": 195,
         "dy": -8,
-        "fontSize": 10,
+        "fontSize": 9,
         "font": "lato"
       },
       "encoding": {
