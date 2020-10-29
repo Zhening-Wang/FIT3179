@@ -74,7 +74,7 @@
         "type": "text",
         "align": "right",
         "baseline": "bottom",
-        "dx": 190,
+        "dx": 185,
         "dy": -8,
         "fontSize": 8,
         "font": "lato"
