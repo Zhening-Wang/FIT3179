@@ -17,7 +17,7 @@
       "font": "lato",
       "fontSize": 14
     },
-    "height": 150,
+    "height": 200,
     "layer": [{
       "mark": "bar"
     }, {
@@ -74,7 +74,7 @@
       "type": "text",
       "align": "center"
     },
-    "height": 150,
+    "height": 200,
     "encoding": {
       "y": {"field": "Race", "type": "nominal", "axis": null},
       "text": {"field": "Race", "type": "nominal"}
@@ -104,7 +104,7 @@
         "text": {"field": "Percentage", "type": "quantitative"}
       }
   }],
-    "height": 150,
+    "height": 200,
     "encoding": {
       "y": {
         "field": "Race", "title": null,
