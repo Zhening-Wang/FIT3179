@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "title": {
-    "text": "Overview of US Police Shooting from 2015 to 2020",
+    "text": "Geographic Distribution of US Police Shooting from 2015 to 2020",
     "font": "lato",
     "fontSize": 22
   },
