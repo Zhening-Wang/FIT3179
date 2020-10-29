@@ -1,10 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "title": {
-    "text": "Unarmed Police Shooting in the US from 2015 to 2020",
-    "font": "lato",
-    "fontSize": 22
-  },
   "width": 400,
   "height": 300,
   "data": {
