@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 566.67,
+  "width": "container",
   "data": {
     "url": "https://raw.githubusercontent.com/Zhening-Wang/FIT3179/main/data/US%20Police%20Shooting.csv"
   },
