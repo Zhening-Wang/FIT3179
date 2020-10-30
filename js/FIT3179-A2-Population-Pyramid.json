@@ -49,9 +49,9 @@
         "axis": {
           "format": "s",
           "labelFont": "lato",
-          "labelFontSize": 12,
+          "labelFontSize": 10,
           "titleFont": "lato",
-          "titleFontSize": 12
+          "titleFontSize": 10
         },
         "sort": "descending",
         "scale": {"domain": [0,70]}
@@ -117,9 +117,9 @@
         "axis": {
           "format": "s",
           "labelFont": "lato",
-          "labelFontSize": 12,
+          "labelFontSize": 10,
           "titleFont": "lato",
-          "titleFontSize": 12
+          "titleFontSize": 10
         },
         "scale": {"domain": [0,70]}
       },
