@@ -4,6 +4,36 @@
   "data": {
     "url": "https://raw.githubusercontent.com/Zhening-Wang/FIT3179/main/data/US%20Police%20Shooting.csv"
   },
+  "params": [
+    {
+      "name": "Race_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Asian",
+          "Black",
+          "Hispanic",
+          "Native American",
+          "Other",
+          "White"
+        ],
+        "labels": [
+          "Show All",
+          "Asian",
+          "Black",
+          "Hispanic",
+          "Native American",
+          "Other",
+          "White"
+        ],
+        "name": "Race Selection: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "Race_selection == null || datum.race == Race_selection"}
+  ],
   "layer": [
     {
       "selection": { 
