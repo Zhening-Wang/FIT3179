@@ -58,9 +58,9 @@
         "opacity": {
           "condition": {
             "selection": "race_highlight", 
-            "value": 0.8
+            "value": 1
           },
-          "value": 0.2 
+          "value": 0 
         },
         "tooltip": [
           {"field": "name", "type": "nominal", "title": "Name"},
