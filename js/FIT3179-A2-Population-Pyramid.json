@@ -13,9 +13,9 @@
       }
     }],
     "title": {
-      "text": "Percentage of Unarmed Shooting",
+      "text": "Percentage of Being an Brutality Victim",
       "font": "lato",
-      "fontSize": 14
+      "fontSize": 12
     },
     "height": 200,
     "layer": [{
@@ -86,7 +86,7 @@
     "title": {
       "text": "Percentage of US Population",
       "font": "lato",
-      "fontSize": 14
+      "fontSize": 12
     },
     "layer": [{
       "mark": "bar"
