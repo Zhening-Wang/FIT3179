@@ -1,38 +1,159 @@
-  
 <!DOCTYPE html>
 <html>
 <head>
+  <title>US Police Brutality</title>
   <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
   <!-- Import vega-embed -->
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
 
-  <!-- CSS file -->
-  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
-
+  <!-- custom style -->
+  <style>
+    *{
+      font-family: 'Lato', sans-serif;
+    }
+    h1{
+      font-weight: 900;
+    }
+    body{
+       background-color: lightgray;
+    }
+    .page{
+       width: 850px;    
+       background-color: white;   
+       margin: auto;
+       padding: 50px;
+       padding-top: 35px;
+    }
+    .vis-container{
+      width: 100%;
+    }
+    .description h2, h1{
+      margin-top:0px;
+    }
+    .description-right {
+      padding-left: 20px;
+    }
+    .description-left{
+      padding-right: 20px;
+    }
+    .pure-g{
+      margin-bottom: 25px;
+    }
+    .small-font{
+        font-size: 14px;
+    }
+  </style>
 </head>
 <body>
 
-<h1>FIT3179 Week 10 Homework - Multiple Visualisations</h1>
+ <div class="page">
 
-<h2>US Police Shootings from 2015 to 2020 - Map Overview</h2>
-<div id="map"></div>
+   <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h1>Police Brutality in the United States</h1>
+        <p>The following visualisation illustrates the police brutality issue in the US, <br>
+        especially the unfair actions against coloured minorities.</p>
+      </div>
+    </div>
+  <!-- end pure grid group -->
 
-<h2>US Police Shootings from 2015 to 2020 - Number of Shootings Categorised by Race</h2>
-<div id="stackedbar"></div>
+    <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-1-3">
+          <div class="description description-left">
+            <h2>Overview of US Police Shooting from 2015 to 2020</h2>
+            <p>The stacked bar chart depicts the number of police shooting by <b>human race</b> across the US. The time frame is from 2015 to 2020. Moreover, arguably the most famous <b><em>"Breonna Taylor"</em></b> case is explicitly listed out.<br><br><em>Note: The position of the text annotation may be subjective to the display device.</em></p>
+          </div>
+        </div>
+        <div class="pure-u-2-3">
+          <div id="vis1"  class="vis-container"></div>
+        </div>
+    </div>
+    <!-- end pure grid group -->
 
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-4-5">
+        <div id="vis2" class="vis-container"></div>
+      </div>
+      <div class="pure-u-1-5">
+        <div class="description description-right">
+          <h2>Geographic Distribution of US Police Shooting from 2015 to 2020</h2>
+          <p>The dot map demonstartes the geographic distribution of US police shooting from 2015 to 2020. Each human race is denoted with a different colour. </p>
+          <p>You could click on different legend to display the distribution of that particular race.</p>
+        </div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-3">
+        <div class="description description-left">
+          <h2>Police Brutality<br>in a Nutshell</h2>
+          <p>Nowadays, the term '<em><b>police brutality'</b></em> has gone viral on the internet. People have been calling the police's actions as <em><b>'brutality'</b></em> because sometimes their unfair actions were targeted against <b>unarmed</b> people. The polar chart shows the number of police shooting against <b>unarmed</b> people from 2015 to 2020. </p>
+        </div>
+      </div>
+      <div class="pure-u-1-2">
+        <div id="vis3"  class="vis-container"></div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-2-3">
+        <br><br><br><br><br><br>
+        <div id="vis4"  class="vis-container"></div>
+      </div>
+      <div class="pure-u-1-3">
+        <div class="description description-left">
+          <h2>Police Brutality Against Coloured Minorities</h2>
+          <p>Among all US police brutality cases from 2015 to 2020, people have been furious about some cases which were targeted toward <b>unarmed, coloured minorities</b>. These events have escalated quickly and have caused some significant effect on society.</p>
+          <p>For instance, the percentage of unarmed shooting victims being <b><em><span style="color:#fc8d62">'black'</span></em></b> is almost <b>three</b> times the percentage of <span style="color:#fc8d62"><b>black</span></b> population in the US. Whereas for <b><em><span style="color:#66c2a5">'white'</span></b></em> Americans, the percentage of being an unarmed shooting victim is <b>two-thirds</b> of the percentage of <span style="color:#66c2a5"><b>white</span></b> population in the US. Such inequality clearly implies the unfair actions against coloured minorities.</p>
+        </div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+  
+    <div class="pure-g">
+      <div class="pure-u-1-1 small-font">
+        <p>This visualisation is created by <a href="https://github.com/Zhening-Wang/FIT3179" target="_blank">Zhening Wang</a> for FIT3179 Assignment 2.<br>Data Source: <a href="https://github.com/washingtonpost/data-police-shootings/blob/master/fatal-police-shootings-data.csv" target="_blank">Washington Post</a>.</p>
+      </div>
+    </div>
+  
+
+  </div> <!-- end page -->
+   
 <script type="text/javascript">
-  var dotmap = "https://Zhening-Wang.github.io/FIT3179/js/hw9.map.json";
-  vegaEmbed('#map', dotmap).then(function(result) {
+  var specVis1 = "https://Zhening-Wang.github.io/FIT3179/js/FIT3179-A2-Stacked-Bar-Chart.json";
+  var specVis2 = "https://Zhening-Wang.github.io/FIT3179/js/FIT3179-A2-Map.json";
+  var specVis3 = "https://Zhening-Wang.github.io/FIT3179/js/FIT3179-A2-Radial-Plot.json";
+  var specVis4 = "https://Zhening-Wang.github.io/FIT3179/js/FIT3179-A2-Population-Pyramid.json"
+
+  vegaEmbed('#vis1', specVis1, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+   vegaEmbed('#vis2', specVis2, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 
-  var stackbarchart = "https://Zhening-Wang.github.io/FIT3179/js/hw10.stacked.bar.json";
-  vegaEmbed('#stackedbar', stackbarchart).then(function(result) {
+  vegaEmbed('#vis3', specVis3, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#vis4', specVis4, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
-
 </body>
 </html>
